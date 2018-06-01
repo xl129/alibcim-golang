@@ -27,6 +27,10 @@ type ChatLogsGet struct {
 	}
 }
 
+func NewChatLogsGet() *ChatLogsGet {
+	return &ChatLogsGet{Paras: make(map[string]string)}
+}
+
 func (u *ChatLogsGet) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.chatlogs.get"
 }

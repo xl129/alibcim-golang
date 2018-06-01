@@ -21,6 +21,10 @@ type RelationsGet struct {
 	}
 }
 
+func NewRelationsGet() *RelationsGet {
+	return &RelationsGet{Paras: make(map[string]string)}
+}
+
 func (u *RelationsGet) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.relations.get"
 }

@@ -7,9 +7,9 @@ import (
 )
 
 func AGet() {
-	u := &im.AppChatLogsGet{Paras: make(map[string]string)}
+	u := im.NewAppChatLogsGet()
 	u.SetCount(100)
-	u.SetBeg(time.Now().Unix() - 186400)
+	u.SetBeg(time.Now().Unix() - 86400*5)
 	u.SetEnd(time.Now().Unix() + 86400)
 	ResponseData := im.Execute(u)
 	if ResponseData.Code == 0 {

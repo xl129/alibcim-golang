@@ -19,6 +19,10 @@ type TribeExpel struct {
 	}
 }
 
+func NewTribeExpel() *TribeExpel {
+	return &TribeExpel{Paras: make(map[string]string)}
+}
+
 func (u *TribeExpel) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.tribe.expel"
 }

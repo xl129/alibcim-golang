@@ -21,6 +21,10 @@ type TribeCreate struct {
 	}
 }
 
+func NewTribeCreate() *TribeCreate {
+	return &TribeCreate{Paras: make(map[string]string)}
+}
+
 func (u *TribeCreate) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.tribe.create"
 }
@@ -30,10 +34,10 @@ func (u *TribeCreate) CheckApiParas() (bool, string) {
 		return false, "缺少User.uid"
 	}
 	if u.TribeName == "" {
-		return  false, "缺少参数TribeName"
+		return false, "缺少参数TribeName"
 	}
 	if u.Notice == "" {
-		return  false, "缺少参数Notice"
+		return false, "缺少参数Notice"
 	}
 	if len(u.Members) > 1000 {
 		return false, "最多1000个群成员"

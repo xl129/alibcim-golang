@@ -18,6 +18,10 @@ type TribeQuit struct {
 	}
 }
 
+func NewTribeQuit() *TribeQuit {
+	return &TribeQuit{Paras: make(map[string]string)}
+}
+
 func (u *TribeQuit) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.tribe.quit"
 }

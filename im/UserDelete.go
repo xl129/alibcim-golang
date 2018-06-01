@@ -16,6 +16,10 @@ type UserDelete struct {
 	}
 }
 
+func NewUserDelete() *UserDelete {
+	return &UserDelete{Paras: make(map[string]string)}
+}
+
 func (u *UserDelete) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.users.delete"
 }

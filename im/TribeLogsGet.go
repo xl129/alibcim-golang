@@ -40,6 +40,10 @@ type TribeLogsGet struct {
 	}
 }
 
+func NewTribeLogsGet() *TribeLogsGet {
+	return &TribeLogsGet{Paras: make(map[string]string)}
+}
+
 func (u *TribeLogsGet) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.tribelogs.get"
 }

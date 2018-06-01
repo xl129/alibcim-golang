@@ -18,6 +18,10 @@ type UserAdd struct {
 	}
 }
 
+func NewUserAdd() *UserAdd {
+	return &UserAdd{Paras: make(map[string]string)}
+}
+
 func (u *UserAdd) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.users.add"
 }

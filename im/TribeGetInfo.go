@@ -18,6 +18,10 @@ type TribeGetInfo struct {
 	}
 }
 
+func NewTribeGetInfo() *TribeGetInfo {
+	return &TribeGetInfo{Paras: make(map[string]string)}
+}
+
 func (u *TribeGetInfo) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.tribe.gettribeinfo"
 }

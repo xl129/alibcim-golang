@@ -7,17 +7,21 @@ import (
 
 //群信息修改
 type TribeModifyTribeInfo struct {
-	User    ApiUser `json:"user"`
-	TribeId uint64  `json:"tribe_id"`
+	User      ApiUser `json:"user"`
+	TribeId   uint64  `json:"tribe_id"`
 	TribeName string  `json:"tribe_name"`
 	Notice    string  `json:"notice"`
-	Paras   map[string]string
+	Paras     map[string]string
 	ResponseData struct {
 		Data struct {
 			TribeCode int    `json:"tribe_code"`
 			RequestId string `json:"request_id"`
 		} `json:"openim_tribe_modifytribeinfo_response"`
 	}
+}
+
+func NewTribeModifyTribeInfo() *TribeModifyTribeInfo {
+	return &TribeModifyTribeInfo{Paras: make(map[string]string)}
 }
 
 func (u *TribeModifyTribeInfo) SetApiMethodName() {
@@ -29,10 +33,10 @@ func (u *TribeModifyTribeInfo) CheckApiParas() (bool, string) {
 		return false, "缺少User.uid"
 	}
 	if u.TribeName == "" {
-		return  false, "缺少参数TribeName"
+		return false, "缺少参数TribeName"
 	}
 	if u.Notice == "" {
-		return  false, "缺少参数Notice"
+		return false, "缺少参数Notice"
 	}
 	if u.TribeId <= 0 {
 		return false, "tribe_id错误"

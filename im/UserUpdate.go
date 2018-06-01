@@ -18,6 +18,10 @@ type UserUpdate struct {
 	}
 }
 
+func NewUserUpdate() *UserUpdate {
+	return &UserUpdate{Paras: make(map[string]string)}
+}
+
 func (u *UserUpdate) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.users.update"
 }

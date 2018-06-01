@@ -18,6 +18,10 @@ type TribeDismiss struct {
 	}
 }
 
+func NewTribeDismiss() *TribeDismiss {
+	return &TribeDismiss{Paras: make(map[string]string)}
+}
+
 func (u *TribeDismiss) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.tribe.dismiss"
 }

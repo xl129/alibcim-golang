@@ -18,6 +18,10 @@ type UserGetInfo struct {
 	}
 }
 
+func NewUserGetInfo() *UserGetInfo {
+	return &UserGetInfo{Paras: make(map[string]string)}
+}
+
 func (u *UserGetInfo) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.users.get"
 }

@@ -20,6 +20,10 @@ type TribeSetMemberNick struct {
 	}
 }
 
+func NewTribeSetMemberNick() *TribeSetMemberNick {
+	return &TribeSetMemberNick{Paras: make(map[string]string)}
+}
+
 func (u *TribeSetMemberNick) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.tribe.setmembernick"
 }

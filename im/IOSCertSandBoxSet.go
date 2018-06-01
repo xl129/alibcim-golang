@@ -17,6 +17,10 @@ type IOSCertSandBoxSet struct {
 	}
 }
 
+func NewIOSCertSandBoxSet() *IOSCertSandBoxSet {
+	return &IOSCertSandBoxSet{Paras: make(map[string]string)}
+}
+
 func (u *IOSCertSandBoxSet) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.ioscert.sandbox.set"
 }

@@ -6,7 +6,7 @@ import (
 )
 
 func RGet() {
-	u := &im.RelationsGet{Paras: make(map[string]string)}
+	u := im.NewRelationsGet()
 	apiuser := im.NewApiUser("Test4")
 	u.SetApiUser(apiuser)
 	u.SetBegDate("20180528")

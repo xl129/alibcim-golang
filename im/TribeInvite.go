@@ -19,6 +19,10 @@ type TribeInvite struct {
 	}
 }
 
+func NewTribeInvite() *TribeInvite {
+	return &TribeInvite{Paras: make(map[string]string)}
+}
+
 func (u *TribeInvite) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.tribe.invite"
 }

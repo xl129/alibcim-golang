@@ -6,7 +6,7 @@ import (
 )
 
 func IPush() {
-	u := &im.IMMsgPush{Paras: make(map[string]string)}
+	u := im.NewIMMsgPush()
 	u.SetFromUser("Test4")
 	var uids = make([]string, 3)
 	uids[0] = "Test5"

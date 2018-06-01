@@ -13,12 +13,16 @@ type TribeGetAllTribes struct {
 	Paras      map[string]string
 	ResponseData struct {
 		Data struct {
-			TribeInfoList struct{
+			TribeInfoList struct {
 				TribeInfo []Tribe `json:"tribe_info"`
 			} `json:"tribe_info_list"`
 			RequestId string `json:"request_id"`
 		} `json:"openim_tribe_getalltribes_response"`
 	}
+}
+
+func NewTribeGetAllTribes() *TribeGetAllTribes {
+	return &TribeGetAllTribes{Paras: make(map[string]string)}
 }
 
 func (u *TribeGetAllTribes) SetApiMethodName() {

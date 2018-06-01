@@ -19,6 +19,10 @@ type TribeJoin struct {
 	}
 }
 
+func NewTribeJoin() *TribeJoin {
+	return &TribeJoin{Paras: make(map[string]string)}
+}
+
 func (u *TribeJoin) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.tribe.join"
 }

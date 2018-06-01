@@ -28,6 +28,10 @@ type TribeSendMsg struct {
 	}
 }
 
+func NewTribeSendMsg() *TribeSendMsg {
+	return &TribeSendMsg{Paras: make(map[string]string)}
+}
+
 func (u *TribeSendMsg) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.tribe.sendmsg"
 }

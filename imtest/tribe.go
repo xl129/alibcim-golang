@@ -6,9 +6,9 @@ import (
 	"time"
 )
 
-func TAdd() {
+func TCreate() {
 	apiuser := im.NewApiUser("Test4")
-	var u = &im.TribeCreate{Paras: make(map[string]string)}
+	var u = im.NewTribeCreate()
 	u.SetApiUser(apiuser)
 	u.SetTribeName("Test测试一下")
 	u.SetNotice("这是一个群公告")
@@ -27,7 +27,7 @@ func TAdd() {
 
 func TGetInfo() {
 	apiuser := im.NewApiUser("Test4")
-	var u = &im.TribeGetInfo{Paras: make(map[string]string)}
+	var u = im.NewTribeGetInfo()
 	u.SetApiUser(apiuser)
 	u.SetTribeId(2610653485)
 	ResponseData := im.Execute(u)
@@ -40,7 +40,7 @@ func TGetInfo() {
 
 func TQuit() {
 	apiuser := im.NewApiUser("Test0")
-	var u = &im.TribeQuit{Paras: make(map[string]string)}
+	var u = im.NewTribeQuit()
 	u.SetApiUser(apiuser)
 	u.SetTribeId(2610653485)
 	ResponseData := im.Execute(u)
@@ -53,7 +53,7 @@ func TQuit() {
 
 func TJoin() {
 	apiuser := im.NewApiUser("Test5")
-	var u = &im.TribeJoin{Paras: make(map[string]string)}
+	var u = im.NewTribeJoin()
 	u.SetApiUser(apiuser)
 	u.SetTribeId(2610653485)
 	ResponseData := im.Execute(u)
@@ -67,7 +67,7 @@ func TJoin() {
 func TExpel() {
 	apiuser := im.NewApiUser("Test4")
 	apimember := im.NewApiUser("Test0")
-	var u = &im.TribeExpel{Paras: make(map[string]string)}
+	var u = im.NewTribeExpel()
 	u.SetApiUser(apiuser)
 	u.SetMember(apimember)
 	u.SetTribeId(2610653485)
@@ -82,7 +82,7 @@ func TExpel() {
 func TSetManager() {
 	apiuser := im.NewApiUser("Test4")
 	apimember := im.NewApiUser("Test5")
-	var u = &im.TribeSetManager{Paras: make(map[string]string)}
+	var u = im.NewTribeSetManager()
 	u.SetApiUser(apiuser)
 	u.SetMember(apimember)
 	u.SetTribeId(2610653485)
@@ -97,7 +97,7 @@ func TSetManager() {
 func TUnSetManager() {
 	apiuser := im.NewApiUser("Test4")
 	apimember := im.NewApiUser("Test5")
-	var u = &im.TribeUnSetManager{Paras: make(map[string]string)}
+	var u = im.NewTribeUnSetManager()
 	u.SetApiUser(apiuser)
 	u.SetMember(apimember)
 	u.SetTribeId(2610653485)
@@ -111,7 +111,7 @@ func TUnSetManager() {
 
 func TDismiss() {
 	apiuser := im.NewApiUser("Test4")
-	var u = &im.TribeDismiss{Paras: make(map[string]string)}
+	var u = im.NewTribeDismiss()
 	u.SetApiUser(apiuser)
 	u.SetTribeId(2610946040)
 	ResponseData := im.Execute(u)
@@ -124,7 +124,7 @@ func TDismiss() {
 
 func TInvite() {
 	apiuser := im.NewApiUser("Test4")
-	var u = &im.TribeInvite{Paras: make(map[string]string)}
+	var u = im.NewTribeInvite()
 	u.SetApiUser(apiuser)
 	u.SetTribeId(2610653485)
 	apiuserlist := make([]im.ApiUser, 1)
@@ -140,7 +140,7 @@ func TInvite() {
 
 func TGetMembers() {
 	apiuser := im.NewApiUser("Test4")
-	var u = &im.TribeGetMembers{Paras: make(map[string]string)}
+	var u = im.NewTribeGetMembers()
 	u.SetApiUser(apiuser)
 	u.SetTribeId(2610653485)
 	ResponseData := im.Execute(u)
@@ -153,7 +153,7 @@ func TGetMembers() {
 
 func TGetAllTribes() {
 	apiuser := im.NewApiUser("Test4")
-	var u = &im.TribeGetAllTribes{Paras: make(map[string]string)}
+	var u = im.NewTribeGetAllTribes()
 	u.SetApiUser(apiuser)
 	u.SetTribeTypes([]string{"0", "1"})
 	ResponseData := im.Execute(u)
@@ -166,7 +166,7 @@ func TGetAllTribes() {
 
 func TModifyTribeInfo() {
 	apiuser := im.NewApiUser("Test4")
-	var u = &im.TribeModifyTribeInfo{Paras: make(map[string]string)}
+	var u = im.NewTribeModifyTribeInfo()
 	u.SetApiUser(apiuser)
 	u.SetTribeName("改个名字")
 	u.SetNotice("改个公告")
@@ -182,7 +182,7 @@ func TModifyTribeInfo() {
 func TSetMemberNick() {
 	apiuser := im.NewApiUser("Test4")
 	apimember := im.NewApiUser("Test4")
-	var u = &im.TribeSetMemberNick{Paras: make(map[string]string)}
+	var u = im.NewTribeSetMemberNick()
 	u.SetApiUser(apiuser)
 	u.SetMember(apimember)
 	u.SetTribeId(2610653485)
@@ -197,7 +197,7 @@ func TSetMemberNick() {
 
 func TSendMsg() {
 	apiuser := im.NewApiUser("Test4")
-	var u = &im.TribeSendMsg{Paras: make(map[string]string)}
+	var u = im.NewTribeSendMsg()
 	u.SetApiUser(apiuser)
 	u.SetTribeId(2610653485)
 	u.SetMsgMsgContent("测试一下")
@@ -210,7 +210,7 @@ func TSendMsg() {
 }
 
 func TLogsGet() {
-	u := &im.TribeLogsGet{Paras: make(map[string]string)}
+	u := im.NewTribeLogsGet()
 	u.SetTribeId(2610653485)
 	u.SetCount(100)
 	u.SetBegin(time.Now().Unix() - 86400)

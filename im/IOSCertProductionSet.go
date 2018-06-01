@@ -17,6 +17,10 @@ type IOSCertProductionSet struct {
 	}
 }
 
+func NewIOSCertProductionSet() *IOSCertProductionSet  {
+	return &IOSCertProductionSet{Paras: make(map[string]string)}
+}
+
 func (u *IOSCertProductionSet) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.ioscert.production.set"
 }

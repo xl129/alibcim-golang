@@ -6,11 +6,11 @@ import (
 )
 
 func IOSCertSandBoxSet() {
-	u := im.IOSCertSandBoxSet{Paras: make(map[string]string)}
+	u := im.NewIOSCertProductionSet()
 	fmt.Println(u)
 }
 
 func IOSCertProductionSet() {
-	u := im.IOSCertProductionSet{Paras: make(map[string]string)}
+	u := im.NewIOSCertSandBoxSet()
 	fmt.Println(u)
 }

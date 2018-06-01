@@ -19,6 +19,10 @@ type TribeSetManager struct {
 	}
 }
 
+func NewTribeSetManager() *TribeSetManager {
+	return &TribeSetManager{Paras: make(map[string]string)}
+}
+
 func (u *TribeSetManager) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.tribe.setmanager"
 }

@@ -17,6 +17,10 @@ type CustMsgPush struct {
 	}
 }
 
+func NewCustMsgPush() *CustMsgPush {
+	return &CustMsgPush{Paras: make(map[string]string)}
+}
+
 func (u *CustMsgPush) SetApiMethodName() {
 	u.Paras["method"] = "taobao.openim.custmsg.push"
 }
